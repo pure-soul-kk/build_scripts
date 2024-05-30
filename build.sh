@@ -6,7 +6,11 @@ rm -rf .repo/local_manifests
 #sync
 repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs --depth=1
 git clone https://github.com/pure-soul-kk/local_manifest -b pixelos .repo/local_manifests
-repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
+if [ -f /opt/crave/resync.sh ]; then
+  /opt/crave/resync.sh
+else
+  repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
+fi
 
 #custom repos
 rm -rf prebuilts/clang/host/linux-x86/clang-r498229b
