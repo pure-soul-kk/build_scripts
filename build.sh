@@ -29,11 +29,12 @@ rm -rf frameworks/opt/telephony
 git clone --depth=1 https://github.com/AOSP-Sweet-Trees/frameworks_opt_telephony frameworks/opt/telephony
 rm -rf vendor/aosp
 git clone --depth=1 https://github.com/AOSP-Sweet-Trees/vendor_aosp vendor/aosp
-rm -rf vendor/aosp/signing/keys
-git clone https://github.com/pure-soul-kk/private-keys vendor/aosp/signing/keys
 
 #build
 . build/envsetup.sh
 lunch aosp_sweet-ap2a-user
 mka installclean
-mka bacon
+m target-files-package otatools
+
+#sign build
+rm -rf sign.sh && wget https://raw.githubusercontent.com/pure-soul-kk/build_scripts/pos/sign.sh && bash sign.sh
