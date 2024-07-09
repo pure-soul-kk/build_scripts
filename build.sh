@@ -30,7 +30,11 @@ git clone --depth=1 https://github.com/AOSP-Sweet-Trees/frameworks_opt_telephony
 rm -rf vendor/aosp
 git clone --depth=1 https://github.com/AOSP-Sweet-Trees/vendor_aosp vendor/aosp
 rm -rf vendor/aosp/signing/keys
-git clone https://github.com/pure-soul-kk/private-keys vendor/aosp/signing/keys
+git clone --depth=1 https://github.com/pure-soul-kk/private-keys vendor/aosp/signing/keys
+rm -rf packages/modules/Bluetooth
+git clone --depth=1 https://github.com/AOSP-Sweet-Trees/packages_modules_Bluetooth packages/modules/Bluetooth
+rm -rf packages/modules/Wifi
+git clone --depth=1 https://github.com/AOSP-Sweet-Trees/android_packages_modules_Wifi packages/modules/Wifi
 
 #build
 . build/envsetup.sh
