@@ -26,4 +26,8 @@ git clone --depth=1 https://github.com/pure-soul-kk/private-keys -b lineage vend
 . build/envsetup.sh
 riseup sweet user
 mka installclean
+
+# Git-lfs
+repo forall -c 'git lfs install && git lfs pull && git lfs checkout'
+
 rise b
