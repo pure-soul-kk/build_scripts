@@ -21,7 +21,7 @@ rm -rf frameworks/av
 git clone --depth=1 https://github.com/pure-soul-kk/frameworks_av frameworks/av
 rm -rf hardware/lineage/compat
 git clone https://github.com/pure-soul-kk/hardware_lineage_compat.git hardware/lineage/compat
-rm -rf vendor/aosp/signing/keys
+rm -rf vendor/lineage-priv/keys
 git clone --depth=1 https://github.com/pure-soul-kk/private-keys -b lineage vendor/lineage-priv/keys
 
 export WITH_GMS=true
