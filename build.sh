@@ -17,6 +17,8 @@ fi
 # git clone --depth=1 https://gitlab.com/itsshashanksp/android_prebuilts_clang_host_linux-x86_clang-r498229b.git -b 13.0 prebuilts/clang/host/linux-x86/clang-r498229b
 rm -rf hardware/xiaomi
 git clone -b vic https://github.com/pure-soul-kk/hardware_xiaomi hardware/xiaomi
+rm -rf vendor/extra
+git clone https://github.com/pure-soul-kk/vendor_extra vendor/extra
 rm -rf frameworks/av
 git clone --depth=1 https://github.com/pure-soul-kk/frameworks_av frameworks/av
 rm -rf hardware/lineage/compat
